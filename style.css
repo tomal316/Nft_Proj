@@ -15,11 +15,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
     border-radius: 20px;
     height: 42em;
     width: 27em;
     background-color: rgb(57, 62, 81);
+    box-shadow: 0px 5px 10px 1px #00FFF8;
 }
 
 
@@ -31,13 +31,18 @@ body {
 .view {
     position: absolute;
     display: none;
-    width: 100px;
+    transform: translate(0,-100px);
 }
 
-.nftpic:hover .view{
-    display: block;
-    z-index: 1;
+.nftpic:hover + .view{
+    display: inline-block;
+}
 
+.nftpic:hover {
+    opacity: 0.5;
+    background-color: #00FFF8;
+    cursor: pointer;
+    transition: opacity 200ms ease-in;
 }
 
 h1 {
@@ -48,6 +53,12 @@ h1 {
     font-size: 1.4em;
     margin-bottom: 2px;
     color: aliceblue;
+}
+
+h1:hover {
+    color: #00FFF8;
+    cursor: pointer;
+    transition: color 200ms ease-in;
 }
 
 p {
@@ -116,4 +127,10 @@ hr {
 
 #name {
     color: white;
+}
+
+#name:hover {
+    color: #00FFF8;
+    cursor: pointer;
+    transition: color 200ms ease-in;
 }
